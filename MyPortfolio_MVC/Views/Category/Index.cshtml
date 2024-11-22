@@ -1,26 +1,36 @@
 ﻿@model List<MyPortfolio_MVC.Models.TblCategory>
 @{
     ViewBag.Title = "Index";
+    Layout="~/Views/AdminLayout/layout.cshtml";
 }
 
 <h2>Kategoriler</h2>
 <br />
 <table class="table table-bordered">
-    <tr>
+    <thead>
+     <tr>
         <th>#</th>
         <th>Kategori Adı </th>
+        <th>Sil</th>
+        <th>Güncelle</th>
 
-    </tr>
+     </tr>
+    </thead>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.CategoryId</td>
-            <td>@item.Name</td>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.Name</td>
+                <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger">Sil<a/> </td>
+                <td><a href="/Category/UpdateCategory/@item.CategoryId" class= "btn btn-outline-info">Güncelle<a/> </td>
 
-        </tr>
+            </tr>
 
-    }
+        }
+
+    </tbody>
 
     
 
@@ -28,5 +38,5 @@
 
 </table>
 <br />
-<a href="/Category/CreateCategory" class="btn btn-primary">Yeni Kategori Ekle</a>
+<a href="/Category/CreateCategory" class="btn btn-success">Yeni Kategori Ekle</a>
 

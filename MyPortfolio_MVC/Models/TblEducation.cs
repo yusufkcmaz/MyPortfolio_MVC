@@ -17,7 +17,7 @@ namespace MyPortfolio_MVC.Models
         public int EducationId { get; set; }
         public string ScoolName { get; set; }
         public string Department { get; set; }
-        public Nullable<System.DateTime> StarDate { get; set; }
+        public System.DateTime StarDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public string Description { get; set; }
         public string Degree { get; set; }
