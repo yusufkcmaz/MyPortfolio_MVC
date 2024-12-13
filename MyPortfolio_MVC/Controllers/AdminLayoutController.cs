@@ -31,7 +31,7 @@ namespace MyPortfolio_MVC.Controllers
         public PartialViewResult AdminLayoutSidebar()
         {
             var Email = Session["email"].ToString();
-            var admin = db.TblAdmins.FirstOrDefault(x => x.Email == Email);
+            var admin = db.TblAdmins.FirstOrDefault(x =>x.Email == Email);
 
             ViewBag.nameSurname = admin.Name + " " + admin.Surname;
             ViewBag.image = admin.ImageUrl;

@@ -20,14 +20,14 @@ namespace MyPortfolio_MVC.Controllers
 
         public PartialViewResult DefaultBanner()
         {
-            var values = db.TblBanners.Where(x=>x.IsShown==true).ToList();
+            var values = db.TblBanners.Where(x => x.IsShown == true).ToList();
             return PartialView(values);
         }
 
         public PartialViewResult DefaultExpertise()
         {
-            
-            var values =db.TblExpertises.ToList();
+
+            var values = db.TblExpertises.ToList();
             return PartialView(values);
         }
         public PartialViewResult DefaultExperience()
@@ -40,8 +40,31 @@ namespace MyPortfolio_MVC.Controllers
         {
             var values = db.TblProjects.ToList();
             return PartialView(values);
+
+
+        }
+
+        [HttpGet]
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public ActionResult SendMessage(TblMessage model)
+        {
+            return RedirectToAction("Index");
+        }
+     
+    public PartialViewResult DefaultAbout()
+        {
+            var values = db.TblAbouts.ToList();
+            return PartialView(values);
         }
 
 
-    }
-}
+        public PartialViewResult DefaultEducation()
+        {
+            var values = db.TblEducations.ToList();
+            return PartialView(values);
+        }
+    }   }

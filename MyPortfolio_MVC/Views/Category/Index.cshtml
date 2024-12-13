@@ -4,12 +4,12 @@
     Layout="~/Views/AdminLayout/layout.cshtml";
 }
 
-<h2>Kategoriler</h2>
-<br />
+<h3>  Kategoriler </h3>
+
 <table class="table table-bordered">
     <thead>
      <tr>
-        <th>#</th>
+        <th></th>
         <th>Kategori Adı </th>
         <th>Sil</th>
         <th>Güncelle</th>
@@ -23,8 +23,10 @@
             <tr>
                 <td>@item.CategoryId</td>
                 <td>@item.Name</td>
-                <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger">Sil<a/> </td>
-                <td><a href="/Category/UpdateCategory/@item.CategoryId" class= "btn btn-outline-info">Güncelle<a/> </td>
+
+            <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger">Sil</a>  </td>
+
+             <td><a href="/Category/UpdateCategory/@item.CategoryId" class= "btn btn-outline-info">Güncelle</a> </td>
 
             </tr>
 
@@ -38,5 +40,5 @@
 
 </table>
 <br />
-<a href="/Category/CreateCategory" class="btn btn-success">Yeni Kategori Ekle</a>
+<a href="/Category/CreateCategory" class="btn btn-success">&nbsp; Kategori Ekle</a>
 
